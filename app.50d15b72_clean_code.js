@@ -102748,7 +102748,7 @@ webpackJsonp([1], {
 		var remove_mouse_movement_old_value  = false;
 		var remove_mouse_movement_update     = false;
 		
-		var auto_aim_enabled                 = false;
+
 
 
 		// Functions
@@ -104001,21 +104001,8 @@ webpackJsonp([1], {
 			});
 			
 			
-			// Disable auto aim with shift key hold
-			window.addEventListener( 'keydown', function(e) {
-				
-				if ( e.keyCode == 16 ) {
-					auto_aim_enabled = false;
-				}
-			});
-			
-			// Enable auto aim with shift key hold no more
-			window.addEventListener( 'keyup', function(e) {
-				
-				if ( e.keyCode == 16 ) {
-					auto_aim_enabled = false;
-				}
-			});
+
+
 			
 			
 			
