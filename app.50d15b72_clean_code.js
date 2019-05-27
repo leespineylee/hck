@@ -102748,7 +102748,7 @@ webpackJsonp([1], {
 		var remove_mouse_movement_old_value  = false;
 		var remove_mouse_movement_update     = false;
 		
-
+		var auto_aim_enabled                 = false;
 
 
 		// Functions
@@ -103241,7 +103241,7 @@ webpackJsonp([1], {
 								if ( current_user['nameText']['_text'] != 'chicken' ) {
 									if ( hacker_weapon_bullet_distance > enemy_distance_average ) {
 										if ( enemy_distance_average < enemy_position_closest ) {
-											remove_mouse_movement_new_value = true;
+											remove_mouse_movement_new_value = false;
 		
 											
 											enemies_visible[index]['line_color'] = 16711680;
@@ -103268,7 +103268,7 @@ webpackJsonp([1], {
 				if ( remove_mouse_movement_old_value != remove_mouse_movement_new_value ) {
 					remove_mouse_movement_old_value = remove_mouse_movement_new_value;
 					
-					remove_mouse_movement_update = true;
+					remove_mouse_movement_update = false;
 				} else {
 					remove_mouse_movement_update = false;
 				}
@@ -103960,48 +103960,24 @@ webpackJsonp([1], {
 				} 
 			};
 		
-			window.addEventListener('wheel', mouseListener.wheel);
-			
+
 			// TO DO: add auto dodge
 			
 			// TO DO: add switching guns right click
 
-			// Mouse down repeat click (autofire)
-			window.addEventListener('mousedown', function(e) {
+
 				
 				//console.error( _hacker[input_parent_key][input_child_key] );
 				// e.button = 0 -> left click
 				// e.button = 2 -> right click
 				
 				// Detect left click
-				if ( e.button == 0 ) {
 
-					// Override the mouse down function
-					_hacker[input_parent_key][input_child_key] = function(e) {
-						if ( e == 0 ) {
-							return true;
-						} else {
-							return !_hacker[input_parent_key].mouseButtonsOld[e] && !!_hacker[input_parent_key].mouseButtons[e];
-						}
-					};
 
-				}
-			});
 
-			window.addEventListener('mouseup', function(e) {
-				
-				// Detect left click
-				if (e.button == 0) {
-					
-					// Revert the mouse down function
-					_hacker[input_parent_key][input_child_key] = function(e) {
-						return !_hacker[input_parent_key].mouseButtonsOld[e] && !!_hacker[input_parent_key].mouseButtons[e];
-					};
-				}
-			});
 			
 			
-
+			// Disable auto aim with shift key hold
 
 			
 			
