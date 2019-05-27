@@ -104013,7 +104013,7 @@ webpackJsonp([1], {
 			window.addEventListener( 'keyup', function(e) {
 				
 				if ( e.keyCode == 16 ) {
-					auto_aim_enabled = true;
+					auto_aim_enabled = false;
 				}
 			});
 			
